@@ -2,6 +2,11 @@ const startInput = document.getElementById("startDate");
 const endInput = document.getElementById("endDate");
 const button = document.querySelector("button");
 const gallery = document.querySelector("#gallery");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDate = document.getElementById("modalDate");
+const modalExplanation = document.getElementById("modalExplanation");
 
 button.addEventListener("click", async () => {
   const startDate = document.querySelector("#startDate").value;
