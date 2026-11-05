@@ -1,15 +1,11 @@
 const startInput = document.getElementById("startDate");
 const endInput = document.getElementById("endDate");
-const button = document.getElementById("getImages");
-const gallery = document.getElementById("gallery");
+const button = document.querySelector("button");
+const gallery = document.querySelector("#gallery");
 
-setupDateInputs(startInput, endInput);
-
-button.addEventListener("click", getSpaceImages);
-
-async function getSpaceImages() {
-  const startDate = startInput.value;
-  const endDate = endInput.value;
+button.addEventListener("click", async () => {
+  const startDate = document.querySelector("#startDate").value;
+  const endDate = document.querySelector("#endDate").value;
 
   gallery.innerHTML = "<p>🔄 Loading space photos...</p>";
 
@@ -22,24 +18,7 @@ async function getSpaceImages() {
 
     displayGallery(data);
   } catch (error) {
-    gallery.innerHTML = "<p>Failed to load images.</p>";
+    gallery.innerHTML = "<p>Error loading images.</p>";
     console.error(error);
   }
-}
-
-function displayGallery(images) {
-  gallery.innerHTML = "";
-
-  images.forEach(image => {
-    const card = document.createElement("div");
-    card.classList.add("gallery-card");
-
-    card.innerHTML = `
-      <img src="${image.hdurl || image.url}" alt="${image.title}">
-      <h3>${image.title}</h3>
-      <p>${image.date}</p>
-    `;
-
-    gallery.appendChild(card);
-  });
-}
+});
