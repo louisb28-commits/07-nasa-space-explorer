@@ -1,12 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #e5e5e5;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e6e6e6;
+  font-family: Arial, sans-serif;
   color: #222;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -15,21 +20,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   margin-bottom: 30px;
 }
 
 .logo {
-  height: 70px;
+  height: 60px;
 }
 
 .site-header h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #222;
 }
-
-/* Controls */
 
 .filters {
   display: flex;
@@ -39,10 +41,10 @@ body {
 }
 
 .filters input {
-  padding: 15px;
+  padding: 14px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1.3rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
   background: white;
 }
 
@@ -50,35 +52,33 @@ body {
   background: #1d3f91;
   color: white;
   border: none;
-  padding: 15px 25px;
-  border-radius: 4px;
-  font-size: 1.2rem;
+  padding: 14px 22px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .filters button:hover {
-  background: #163375;
+  background: #15306e;
 }
-
-/* Gallery */
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 25px;
 }
 
 .gallery-card {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
   cursor: pointer;
   transition: transform .3s ease;
 }
 
 .gallery-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .gallery-card img {
@@ -88,26 +88,20 @@ body {
   transition: transform .3s ease;
 }
 
-/* Extra Credit Hover Zoom */
-
 .gallery-card:hover img {
   transform: scale(1.05);
 }
 
 .gallery-card h3 {
-  font-size: 1.1rem;
-  color: #10295a;
-  padding: 15px 15px 5px;
-  margin: 0;
+  padding: 16px 16px 8px;
+  color: #12295a;
+  font-size: 1.4rem;
 }
 
 .gallery-card p {
-  padding: 0 15px 15px;
-  color: #444;
-  margin: 0;
+  padding: 0 16px 16px;
+  font-size: 1.1rem;
 }
-
-/* Placeholder */
 
 .placeholder {
   grid-column: 1 / -1;
@@ -117,16 +111,19 @@ body {
   border-radius: 10px;
 }
 
-/* Modal */
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
 
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.85);
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  padding: 30px;
 }
 
 .modal.show {
@@ -134,32 +131,40 @@ body {
 }
 
 .modal-content {
+  background: white;
   width: 90%;
   max-width: 900px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
   max-height: 90vh;
   overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .modal-content img {
   width: 100%;
   border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .close-btn {
   float: right;
-  border: none;
-  background: #d43f30;
-  color: white;
   width: 40px;
   height: 40px;
+  border: none;
   border-radius: 50%;
+  background: #d43f30;
+  color: white;
   cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
-/* Mobile */
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 50px;
+}
 
 @media (max-width: 900px) {
   .gallery {
@@ -185,9 +190,5 @@ body {
 
   .site-header {
     flex-direction: column;
-  }
-
-  .site-header h1 {
-    font-size: 2rem;
   }
 }
